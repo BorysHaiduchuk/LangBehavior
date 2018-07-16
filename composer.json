@@ -1,0 +1,21 @@
+{
+    "name": "boryshaiduchuk/yii2-lang-behavior",
+    "description": "LangBehavior",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," LangBehavior"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Borys",
+            "email": "boris.h.201313@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "boryshaiduchuk\\langbehavior\\":  "src/"
+        }
+    }
+}
