@@ -8,8 +8,22 @@ use yii\db\ActiveRecord;
  */
 class LangBehavior extends \yii\base\Behavior
 {
+    /**
+     * Model for translation
+     * @var ActiveRecord
+     */
     public $t;
+
+    /**
+     * Name key of the translation model
+     * @var string
+     */
     public $fk;
+
+    /**
+     * Language id
+     * @var int
+     */
     public $l;
 
     /**
@@ -48,6 +62,7 @@ class LangBehavior extends \yii\base\Behavior
                 $this->t->{$attr} = $this->owner->{$attr};
             }
         }
+
         if (!$this->t->validate()) {
             foreach ($this->t->errors as $k => $v) {
                 $this->owner->addError($k, $v[0]);
@@ -61,7 +76,7 @@ class LangBehavior extends \yii\base\Behavior
     public function saveTranslation()
     {
         $this->t->{$this->fk} = $this->owner->primaryKey;
-        //$this->t->{$this->fk}
+
         if ($this->t->validate()) {
             $this->t->save();
         }

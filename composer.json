@@ -10,6 +10,7 @@
             "email": "boris.h.201313@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": "~2.0.0"
     },
@@ -17,5 +18,8 @@
         "psr-4": {
             "boryshaiduchuk\\langbehavior\\":  "src/"
         }
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "^2.0@dev"
     }
 }

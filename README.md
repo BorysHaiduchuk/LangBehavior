@@ -1,11 +1,23 @@
 LangBehavior
 ============
-LangBehavior
+Translatable behavior aggregates logic of linking translations to the primary model.
 
 Installation
 ------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Add composer.json
+```
+  "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/BorysHaiduchuk/LangBehavior.git"
+        }
+
+    ]
+```
+
 
 Either run
 
@@ -25,7 +37,19 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
-
+Add to ActiveRecord:
 ```php
-<?= \boryshaiduchuk\langbehavior\AutoloadExample::widget(); ?>```
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => LangBehavior::className(),
+                't' => new PageLang(),
+                'fk' => 'record_id',
+                'l' => 1
+            ],
+        ];
+    }```

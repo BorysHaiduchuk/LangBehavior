@@ -1,0 +1,10 @@
+codecept.phar
+
+# Composer itself is not needed
+composer.phar
+
+# Composer vendor dir
+/vendor
+
+# PHPStorm project files
+.idea
